@@ -13,12 +13,12 @@ This project is a sandbox environment for exploring 2-dimensional cellular autom
 ### What are Cellular Automata?
 
 > *[Wikipedia](https://en.wikipedia.org/wiki/Cellular_automaton)*
-> Concieved by Stalislaw Ulam and John von Neumann in the 1940s then evangelized/expanded upon by Stephen Wolfram in the '80s, Cellular Automaton are a framework and model of discrete computation established on the basis of self-replication.
+> Conceived by Stanislaw Ulam and John von Neumann in the 1940s then evangelized/expanded upon by Stephen Wolfram in the '80s, Cellular automata are a framework and model of discrete computation established on the basis of self-replication.
 > A cellular automaton consists of a grid of cells with any finite number of dimensions (constrained to visually presentable dimensions here), each of which has a finite number of states (usually binary). At each timestep, those cells are evaluated based on a predefined set of rules (technically a singular local update function, but it is often defined piecewise) outlining their relationship to their neighbors (the neighborhood can be defined differently, but in this context it refers all adjacent cells) to describe the next generation.
 
 ### Why a CA Sandbox?
 
-> Cellular Automata were conceptualized in the 1940s by John von Neumann as the first imagined "self-replicating machines". The software simulation I am writing for this sandbox serves as what he described as a "Universal Constructor". Based on the rules established for updating the space (system of equations defining possible behaviors/changes of the physical space), which he referred to as the "tape" that defines the machine to build, the unversal constructor can make any changes.
+> Cellular Automata were conceptualized in the 1940s by John von Neumann as the first imagined "self-replicating machines". The software simulation I am writing for this sandbox serves as what he described as a "Universal Constructor". Based on the rules established for updating the space (system of equations defining possible behaviors/changes of the physical space), which he referred to as the "tape" that defines the machine to build, the universal constructor can make any changes.
 > This understanding paved the way for genetics, much of computer science, and now is particularly relevant to robotics and constructed intelligence frameworks. It is the foundation of the foundation, so developing a better understanding of this framework is time well spent.
 
 ### Why Java?
