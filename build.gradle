@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.gradleup.shadow' version '9.0.0-beta12'
+}
+
+group = 'ngl321.jcas'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'HelloWorld'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('io.javalin:javalin:7.0.1')
+}
