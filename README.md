@@ -40,16 +40,16 @@ This project is a sandbox environment for exploring 2-dimensional cellular autom
 ### Future Features
 
 > These are general features of CA that I would like to implement, but are out of scope for a quick-complete initial phase.
-> 
-> - [ ] Add "neighborhood selection" rather than default to Moore Neighborhood
-> - [ ] Expand rule definitional scripting options + linting (allow logical statement vs LaTeX transition function visualization/edit options)
-> - [ ] 3+ State options for cells
->
+ 
+ - [ ] Add "neighborhood selection" rather than default to Moore Neighborhood
+ - [ ] Expand rule definitional scripting options + linting (allow logical statement vs LaTeX transition function visualization/edit options)
+ - [ ] 3+ State options for cells
+
 > I queried Gemini for suggestions of ways to compress my grid-space update packet sent from server to client so that it can handle larger grid sizes (or zoom?). Each suggestion involves an area of study I either want to practice or learn to implement.
->
-> - [ ] Allow grid-size scaling as enabled by more concise packets
->    - [ ] Add scroll-to-zoom on grid (zoom control buttons?)
->    - [ ] Reduce packet size by only sending XOR of grid-space
->    - [ ] Reframe as quadtree structure representing grid space
->    - [ ] OVERKILL: Train VAE to learn compressed representations
->    - [ ] OVERKILL: Represent as topology?
+
+- [ ] Allow grid-size scaling as enabled by more concise packets
+   - [ ] Add scroll-to-zoom on grid (zoom control buttons?)
+   - [ ] Reduce packet size by only sending XOR of grid-space
+   - [ ] Reframe as quadtree structure representing grid space
+   - [ ] OVERKILL: Train VAE to learn compressed representations
+   - [ ] OVERKILL: Represent as topology?

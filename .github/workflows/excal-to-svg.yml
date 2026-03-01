@@ -6,9 +6,9 @@ on:
     paths:
       - "**/*.excalidraw"
   pull_request:
-      branches: ["main", "develop"]
-      paths:
-        - "**/*.excalidraw"
+    branches: ["main", "develop"]
+    paths:
+      - "**/*.excalidraw"
       
 jobs:
   build:
