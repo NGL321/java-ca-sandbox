@@ -1,0 +1,44 @@
+name: excal-to-svg
+
+on:
+  push:
+    branches: ["main", "develop"]
+    paths:
+      - "**/*.excalidraw"
+  pull_request:
+    branches: ["main", "develop"]
+    paths:
+      - "**/*.excalidraw"
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Install Browser
+        uses: browser-actions/setup-chrome@v2
+        id: setup-chrome
+      - name: Run excalidraw exporter
+        uses: SkohTV/excalidraw-exporter@v1
+        with:
+          pattern: docs/*.excalidraw
+          chromePath: ${{ steps.setup-chrome.outputs.chrome-path }}
+          exportWithDarkMode: true
+      - name: Rename exported SVGs
+        run: |
+          find docs -name "*.excalidraw.svg" | while read f; do
+            mv "$f" "${f%.excalidraw.svg}.svg"
+          done
+      - name: Clean up Chrome temp files
+        run: rm -rf "/var/tmp/chrome"
+      - name: Commit exported SVGs
+        uses: stefanzweifel/git-auto-commit-action@v7.1.0
+        with:
+          commit_message: "docs(excalidraw): export to svg"
+          branch: ${{ github.head_ref || github.ref_name }}
+          file_pattern: "docs/*.svg"
