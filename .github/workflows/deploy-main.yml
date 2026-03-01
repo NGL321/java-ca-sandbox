@@ -51,4 +51,8 @@ jobs:
           service: ${{ env.SERVICE }}
           region: ${{ env.REGION }}
           image: ${{ env.IMAGE }}:${{ github.sha }}
-          flags: --allow-unauthenticated
+          flags: >-
+            --allow-unauthenticated
+            --max-instances=3
+            --timeout=30s
+            --concurrency=80

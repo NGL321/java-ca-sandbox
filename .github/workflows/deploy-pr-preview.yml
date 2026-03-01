@@ -6,6 +6,10 @@ on:
       - main
     types: [opened, synchronize, reopened, closed]
 
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+  cancel-in-progress: true
+
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   REGION: us-west1
@@ -54,7 +58,11 @@ jobs:
           service: ${{ env.SERVICE }}
           region: ${{ env.REGION }}
           image: ${{ env.IMAGE }}:pr-${{ github.event.number }}
-          flags: --allow-unauthenticated
+          flags: >-
+            --allow-unauthenticated
+            --max-instances=1
+            --timeout=30s
+            --concurrency=80
 
       - name: Post preview URL to PR
         uses: actions/github-script@v7
@@ -90,3 +98,10 @@ jobs:
             --region=${{ env.REGION }} \
             --project=${{ env.PROJECT_ID }} \
             --quiet
+
+      - name: Delete preview image from Artifact Registry
+        run: |
+          gcloud artifacts docker images delete \
+            ${{ env.IMAGE }}:pr-${{ github.event.number }} \
+            --project=${{ env.PROJECT_ID }} \
+            --quiet || true
