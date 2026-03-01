@@ -1,0 +1,27 @@
+name: excal-to-svg
+
+on:
+  push:
+    branches: ["main", "develop"]
+    paths:
+      - "**/*.excalidraw"
+  pull_request:
+      branches: ["main", "develop"]
+      paths:
+        - "**/*.excalidraw"
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Install Browser
+        uses: browser-actions/setup-chrome@v2
+        id: setup-chrome
+      - name: Run excalidraw exporter
+        uses: SkohTV/excalidraw-exporter@v1
+        with:
+          pattern: docs/*.excalidraw
+          chromePath: ${{ steps.setup-chrome.outputs.chrome-path }}
+          exportWithDarkMode: true
