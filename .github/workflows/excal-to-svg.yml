@@ -29,8 +29,16 @@ jobs:
           pattern: docs/*.excalidraw
           chromePath: ${{ steps.setup-chrome.outputs.chrome-path }}
           exportWithDarkMode: true
+      - name: Rename exported SVGs
+        run: |
+          find docs -name "*.excalidraw.svg" | while read f; do
+            mv "$f" "${f%.excalidraw.svg}.svg"
+          done
+      - name: Clean up Chrome temp files
+        run: rm -rf "/var/tmp/chrome"
       - name: Commit exported SVGs
         uses: stefanzweifel/git-auto-commit-action@v7.1.0
         with:
           commit_message: "docs(excalidraw): export to svg"
           branch: ${{ github.head_ref || github.ref_name }}
+          file_pattern: "docs/*.svg"
