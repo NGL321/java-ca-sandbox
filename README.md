@@ -29,11 +29,11 @@ This project is a sandbox environment for exploring 2-dimensional cellular autom
 
 ### Runtime Workflow
 
-![](JavaCA_Flow.svg)
+![](docs/JavaCA_Flow.svg)
 
 ### UX
 
-![](JavaCA_UI.svg)
+![](docs/JavaCA_UI.svg)
 
 > *Due to my lacking UX skills, I will be using the above diagram as a basis for generating the html/css required rather than creating by hand.*
 
