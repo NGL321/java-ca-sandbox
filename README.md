@@ -1,9 +1,9 @@
-<h1 align="center"> Java - Cellular Automaton Sandbox <h1>
+<h1 align="center"> Java - Cellular Automaton Sandbox </h1>
 
 ---
 
 <p align="center">
-    ![excalidraw2svg](https://github.com/NGL321/java-ca-sandbox/actions/workflows/excal-to-svg.yml/badge.svg)
+    <img src="https://github.com/NGL321/java-ca-sandbox/actions/workflows/excal-to-svg.yml/badge.svg" alt="excalidraw2svg" />
 </p>
 
 This project is a sandbox environment for exploring 2-dimensional cellular automata with configurable update rulesets and initial state. This project is an exploration designed, in part, to refresh my Java language skills in preparation for potential upcoming coursework.
