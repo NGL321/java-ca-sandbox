@@ -10,7 +10,7 @@ env:
   REGION: us-west1
   REPO: java-ca-sandbox
   SERVICE: java-ca-sandbox
-  IMAGE: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/java-ca-player/app
+  IMAGE: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/java-ca-sandbox/app
 
 jobs:
   deploy:

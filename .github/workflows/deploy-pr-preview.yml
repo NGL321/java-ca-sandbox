@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   REGION: us-west1
-  IMAGE: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/java-ca-player/app
+  IMAGE: us-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/java-ca-sandbox/app
   SERVICE: java-ca-sandbox-pr-${{ github.event.number }}
 
 jobs:
