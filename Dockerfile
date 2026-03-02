@@ -16,4 +16,7 @@ EXPOSE 8080
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*-all.jar /app/app.jar
 
+# Copy static web resources so Javalin can serve them
+COPY --from=build /home/gradle/src/src/res/public /res/public
+
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

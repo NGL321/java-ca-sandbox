@@ -14,7 +14,7 @@ java {
 }
 
 application {
-    mainClass = 'HelloWorld'
+    mainClass = 'CASandboxMain'
 }
 
 repositories {

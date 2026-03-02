@@ -1,9 +1,10 @@
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 
-public class HelloWorld {
+public class CASandboxMain {
     public static void main(String[] args) {
         var app = Javalin.create(config -> {
-            config.routes.get("/", ctx -> ctx.result("Hello World"));
+            config.staticFiles.add("res/public", Location.EXTERNAL);
         }).start(8080);
     }
 }
