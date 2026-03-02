@@ -1,0 +1,72 @@
+<div id="view-editor" class="view">
+
+    <header class="top-bar">
+        <span class="brand">Angl's&nbsp;<span>CA</span>&nbsp;Sandbox</span>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-name" id="top-bar-system-name">New System</span>
+    </header>
+
+    <div class="body-area">
+
+        <!-- Left: title + canvas + playback -->
+        <div class="editor-left">
+
+            <div class="title-bar">
+                <input id="system-title" type="text" placeholder="Selectable / Editable Title" />
+            </div>
+
+            <div class="editor-canvas-wrap">
+                <canvas id="ca-canvas-editor"></canvas>
+            </div>
+
+            <div class="playback-bar">
+                <button id="btn-play" class="btn-play" title="Play">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+                <button id="btn-pause" class="btn-play active" title="Pause">
+                    <i class="bi bi-pause-fill"></i>
+                </button>
+
+                <div class="playback-sep"></div>
+
+                <button id="btn-speed-2" class="btn-play" title="2× speed">
+                    <span class="speed-btn-label">2x</span>
+                </button>
+                <button id="btn-speed-10" class="btn-play" title="10× speed">
+                    <span class="speed-btn-label">10x</span>
+                </button>
+
+                <span class="gen-counter" id="editor-gen-counter">Gen: 0</span>
+                <span class="speed-label" id="speed-label">1×</span>
+            </div>
+
+        </div><!-- /editor-left -->
+
+        <!-- Right: rules panel -->
+        <aside class="rules-panel">
+            <div class="rules-panel-header">
+                <span class="panel-title">Rules</span>
+                <span class="rule-count-badge" id="rule-count-badge">0</span>
+            </div>
+
+            <div class="rules-panel-body" id="rules-list">
+
+                <button class="btn-add-rule" id="btn-add-rule">
+                    <i class="bi bi-plus-circle"></i> Add Rule!
+                </button>
+
+            </div><!-- /rules-list -->
+
+            <div class="rules-panel-footer">
+                <button class="btn btn-outline-secondary" id="btn-editor-back">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+                <button class="btn btn-primary" id="btn-save-system">
+                    <i class="bi bi-floppy"></i> Save
+                </button>
+            </div>
+
+        </aside>
+
+    </div><!-- /body-area -->
+</div><!-- /view-editor -->
